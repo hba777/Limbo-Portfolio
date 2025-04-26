@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navbar />
       <Component {...pageProps} />
       <Footer />
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
     </main>
   )
 }
