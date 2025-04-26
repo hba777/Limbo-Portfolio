@@ -7,22 +7,22 @@ const skills = [
   {
     title: "Full Stack Development",
     description: "Building end-to-end web applications with modern frameworks and technologies",
-    position: [-8, 4, 0] as [number, number, number]
+    position: [-7, 3, 0] as [number, number, number]
   },
   {
     title: "Cross-Platform App Development",
     description: "Creating mobile applications that work seamlessly across different platforms",
-    position: [8, 4, 0] as [number, number, number]
+    position: [7, 3, 0] as [number, number, number]
   },
   {
     title: "Database Management",
     description: "Expertise in SQL, MongoDB, and Firebase for efficient data storage and retrieval",
-    position: [-8, -4, 0] as [number, number, number]
+    position: [-7, -5, 0] as [number, number, number]
   },
   {
     title: "UI/UX Design",
     description: "Creating intuitive and engaging user interfaces with modern design principles",
-    position: [8, -4, 0] as [number, number, number]
+    position: [7, -5, 0] as [number, number, number]
   }
 ];
 
@@ -35,9 +35,9 @@ export default function Skills() {
           className="text-4xl md:text-5xl font-bold text-center mb-16"
         />
         
-        <div className="h-[600px] w-full">
+        <div className="h-[700px] w-full">
           <Canvas shadows>
-            <PerspectiveCamera makeDefault position={[0, 0, 12]} fov={60} />
+            <PerspectiveCamera makeDefault position={[0, 0, 12]} fov={70} />
             <OrbitControls 
               enableZoom={false} 
               enablePan={false}

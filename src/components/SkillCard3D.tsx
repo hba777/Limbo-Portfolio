@@ -72,9 +72,9 @@ export default function SkillCard3D({ title, description, position, delay }: Ski
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.2}>
         {/* Card Background */}
         <mesh castShadow receiveShadow>
-          <boxGeometry args={[9, 7, 0.2]} />
+          <boxGeometry args={[10, 6, 0.2]} />
           <MeshDistortMaterial
-            color="#4a4a4a"
+            color="#5a5a5a"
             metalness={0.6}
             roughness={0.2}
             distort={0.1}
@@ -90,7 +90,7 @@ export default function SkillCard3D({ title, description, position, delay }: Ski
 
         {/* Card Border Glow */}
         <mesh position={[0, 0, 0.11]}>
-          <boxGeometry args={[9.1, 7.1, 0.01]} />
+          <boxGeometry args={[10.1, 6.1, 0.01]} />
           <meshStandardMaterial
             color="#5a5a5a"
             metalness={0.8}
@@ -123,7 +123,7 @@ export default function SkillCard3D({ title, description, position, delay }: Ski
           color="#dddddd"
           anchorX="center"
           anchorY="middle"
-          maxWidth={8}
+          maxWidth={9}
           letterSpacing={0.02}
           outlineWidth={0.01}
           outlineColor="#000000"
@@ -133,8 +133,8 @@ export default function SkillCard3D({ title, description, position, delay }: Ski
         </Text>
 
         {/* Decorative Elements */}
-        <mesh position={[0, -2.5, 0.12]}>
-          <boxGeometry args={[7, 0.1, 0.01]} />
+        <mesh position={[0, -2, 0.12]}>
+          <boxGeometry args={[8, 0.1, 0.01]} />
           <meshStandardMaterial
             color="#5a5a5a"
             metalness={0.8}

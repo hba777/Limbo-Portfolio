@@ -34,8 +34,8 @@ function InteractiveStars() {
         fade 
         speed={0.3}
       />
-      <fog attach="fog" args={['#1a1a1a', 30, 150]} />
-      <color attach="background" args={['#0a0a0a']} />
+      <fog attach="fog" args={['#0f172a', 30, 150]} />
+      <color attach="background" args={['#020617']} />
     </group>
   );
 }
