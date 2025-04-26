@@ -5,19 +5,39 @@ import AnimatedHeading from './AnimatedHeading';
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A mysterious project that pushes the boundaries of creativity.",
-    image: "/project1.jpg"
+    title: "Sign Language Translator Glove",
+    description: "Developed and trained an IMU acquiring random forest machine learning model, achieving an accuracy of 97%. Curated and trained a custom dataset tailored specifically for the model. Integrated Bluetooth technology for seamless wireless communication between the glove (hardware-side) and mobile (software) components. Delivered real-time, accurate translations for sign language gestures, enhancing usability. Designed and implemented a user-friendly mobile application to provide an intuitive and accessible experience.",
+    image: "/project1.jpg",
+    skills: ['Machine Learning', 'Python', 'Bluetooth', 'Mobile Development', 'Random Forest', 'IMU Sensors'],
+    githubLink: "https://github.com/hba777/sign_glove_application"
   },
   {
-    title: "Project 2",
-    description: "An exploration into the depths of digital art and interaction.",
-    image: "/project2.jpg"
+    title: "Spotify Clone App",
+    description: "Independently replicated a research project on predicting music streams on Spotify. Implemented various analysis techniques to understand the relationships between different song attributes. Utilized an SQL database as the backend to manage song data.",
+    image: "/project2.jpg",
+    skills: ['SQL', 'Data Analysis', 'Python', 'Machine Learning', 'Data Visualization', 'Flutter', 'Node.js'],
+    githubLink: "https://github.com/hba777/ScuffedSpotify"
   },
   {
-    title: "Project 3",
-    description: "A journey through the liminal spaces of web development.",
-    image: "/project3.jpg"
+    title: "Real-Time Chat Application",
+    description: "Developed a real-time chat application in Flutter. Used Firebase for user authentication and data storage. Implemented a push-notification system using Firebase Cloud Messaging.",
+    image: "/project3.jpg",
+    skills: ['Flutter', 'Firebase', 'Firebase Cloud Messaging'],
+    githubLink: "https://github.com/hba777/FlutterNikoChatApp"
+  },
+  {
+    title: "Real Estate Website",
+    description: "Built a responsive real estate website using Next.js for a seamless user experience. Utilized PostgreSQL for database management and Firebase for user authentication and bookmark storage. Integrated interactive property maps using Leaflet.js for enhanced property visualization and location discovery.",
+    image: "/project4.jpg",
+    skills: ['Next.js', 'PostgreSQL', 'Firebase', 'Leaflet.js', 'JavaScript', 'Responsive Design'],
+    githubLink: "https://github.com/hba777/Real-Estate-Website"
+  },
+  {
+    title: "Amadeus",
+    description: "Implemented seamless integration with the Gemini API to generate dynamic, AI-driven text and image responses based on user inputs. Allowed users to engage in conversations that included both textual and visual content, ensuring user-friendliness.",
+    image: "/project5.jpg",
+    skills: ['Gemini API', 'Natural Language Processing', 'Flutter'],
+    githubLink: "https://github.com/hba777/Amadeus"
   }
 ];
 
