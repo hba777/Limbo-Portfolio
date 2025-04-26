@@ -14,9 +14,15 @@ export default function Navbar() {
 
   const handleProjectsClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    const currentPath = window.location.pathname;
+    
+    if (currentPath === '/about') {
+      window.location.href = '/';
+    } else {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
