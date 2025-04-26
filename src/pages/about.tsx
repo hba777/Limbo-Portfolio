@@ -53,8 +53,8 @@ export default function About() {
                 <span className="text-cyan-400 font-medium"> React</span>, 
                 <span className="text-purple-400 font-medium"> Node.js</span>, and various database 
                 technologies, I specialize in crafting responsive, performant, and user-friendly applications. 
-                I'm particularly interested in creating immersive web experiences that push the boundaries 
-                of what's possible in the browser.
+                I&apos;m particularly interested in creating immersive web experiences that push the boundaries 
+                of what&apos;s possible in the browser.
               </motion.p>
 
               <motion.div 
