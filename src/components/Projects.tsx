@@ -21,40 +21,6 @@ const projects = [
   }
 ];
 
-const headingVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 50
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-      duration: 0.5
-    }
-  }
-};
-
-const letterVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 50,
-    rotateX: -90
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100
-    }
-  }
-};
-
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const controls = useAnimation();
@@ -72,6 +38,7 @@ export default function Projects() {
 
   return (
     <motion.section
+      id="projects"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}

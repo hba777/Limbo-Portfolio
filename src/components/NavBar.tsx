@@ -1,6 +1,7 @@
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import { FaGithub } from "react-icons/fa";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -71,6 +72,7 @@ export default function Navbar() {
         transition={{ duration: 0.3 }}
         className="absolute top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl flex justify-between items-center px-8 py-4 bg-black/80 backdrop-blur-md border border-white/20 rounded-lg shadow-lg"
       >
+        <Link href="/">
         <motion.h1 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -78,14 +80,20 @@ export default function Navbar() {
           className="text-xl font-orbitron tracking-widest text-white"
         >
           Haris's Portfolio
-        </motion.h1>
+        </motion.h1></Link>
         <ul className="flex gap-8">
           {['About', 'Projects', 'Contact'].map((item) => (
             <li key={item}>
-              <Link href={`/${item.toLowerCase()}`}>
+              <Link href={item === 'Projects' ? '#projects' : `/${item.toLowerCase()}`}>
                 <motion.div
                   className="relative text-white/80 hover:text-white"
                   whileHover="hover"
+                  onClick={(e) => {
+                    if (item === 'Projects') {
+                      e.preventDefault();
+                      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item}
                   <motion.div
@@ -102,6 +110,26 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <a 
+              href="https://linkedin.com/in/haris-bin-amir-207032221/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-white"
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-white"
+            >
+              <FaGithub size={20} />
+            </a>
+          </li>
         </ul>
       </motion.nav>
     </div>
