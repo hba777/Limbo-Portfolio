@@ -40,7 +40,7 @@ export default function ProjectCard({ title, description, image, skills, githubL
 
   return (
     <motion.div
-      className="w-full h-full perspective"
+      className="w-full h-full perspective cursor-grab active:cursor-grabbing"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -48,6 +48,8 @@ export default function ProjectCard({ title, description, image, skills, githubL
         rotateY,
         transformStyle: "preserve-3d",
       }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div className="relative w-full h-full">
         <motion.div
