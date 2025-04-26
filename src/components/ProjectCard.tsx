@@ -57,8 +57,7 @@ export default function ProjectCard({ title, description, image, skills, githubL
           transition={{ duration: 0.6, ease: "easeInOut" }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <div className="w-full h-full">
-            <img src={image} alt={title} className="w-full h-1/2 object-cover rounded-lg mb-6" />
+          <div className="w-full h-full pt-60">
             <h3 className="text-3xl font-bold mb-4 text-gray-100">{title}</h3>
             <div className="flex flex-wrap gap-2 mb-4">
               {skills.map((skill) => (
@@ -99,37 +98,50 @@ export default function ProjectCard({ title, description, image, skills, githubL
           transition={{ duration: 0.6, ease: "easeInOut" }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <div className="w-full h-full">
+          <div className="w-full h-full flex flex-col pt-20">
             <h3 className="text-3xl font-bold mb-4 text-gray-100">{title}</h3>
-            <p className="text-lg text-gray-400 mb-6 font-['Orbitron']">{description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {skills.map((skill) => (
-                <span 
-                  key={skill}
-                  className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 hover:bg-white/10 transition-colors"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-row gap-3">
-              {githubLink && (
-                <a 
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-gray-200 flex-1"
-                >
-                  <FaGithub className="text-xl" />
-                  <span>View on GitHub</span>
-                </a>
-              )}
-              <button 
-                onClick={() => setFlipped(!flipped)}
-                className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-gray-200 flex-1"
-              >
-                Click to flip back
-              </button>
+            <div className="flex flex-row gap-8 flex-1">
+              <div className="flex-1 flex flex-col">
+                <p className="text-lg text-gray-400 mb-6 font-['Orbitron']">{description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {skills.map((skill) => (
+                    <span 
+                      key={skill}
+                      className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 hover:bg-white/10 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-row gap-3">
+                  {githubLink && (
+                    <a 
+                      href={githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-gray-200 flex-1"
+                    >
+                      <FaGithub className="text-xl" />
+                      <span>View on GitHub</span>
+                    </a>
+                  )}
+                  <button 
+                    onClick={() => setFlipped(!flipped)}
+                    className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-gray-200 flex-1"
+                  >
+                    Flip back
+                  </button>
+                </div>
+              </div>
+              <div className="flex-1 flex items-start justify-center">
+                <div className="w-[400px] h-[550px] flex items-center justify-center">
+                  <img 
+                    src={image} 
+                    alt={title} 
+                    className="w-full h-full object-contain rounded-lg shadow-lg" 
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

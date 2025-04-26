@@ -29,7 +29,7 @@ export default function Hero() {
               ease: "easeOut"
             }}
           >
-            Portfolio
+            Full Stack Developer  
           </motion.span>
         </motion.h1>
       </div>
@@ -38,36 +38,67 @@ export default function Hero() {
           position: relative;
           color: #2a2a2a;
           -webkit-text-stroke: 1.5px transparent;
-          animation: strobeStroke 3s ease-in-out infinite;
+          animation: strobeStroke 4s ease-in-out infinite, float 6s ease-in-out infinite;
           letter-spacing: 2px;
+          text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.3),
+            0 0 10px rgba(255, 255, 255, 0.2),
+            0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
 
         @keyframes strobeStroke {
           0% {
             -webkit-text-stroke: 1.5px transparent;
-            text-shadow: none;
-          }
-          25% {
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
             text-shadow: 
-              0 0 1px rgba(255, 255, 255, 0.4),
-              0 0 2px rgba(255, 255, 255, 0.4),
-              0 0 3px rgba(255, 255, 255, 0.4);
+              0 0 5px rgba(255, 255, 255, 0.3),
+              0 0 10px rgba(255, 255, 255, 0.2),
+              0 0 15px rgba(255, 255, 255, 0.1);
           }
-          50% {
+          20% {
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.8);
+            text-shadow: 
+              0 0 5px rgba(255, 255, 255, 0.8),
+              0 0 10px rgba(255, 255, 255, 0.6),
+              0 0 15px rgba(255, 255, 255, 0.4),
+              0 0 20px rgba(255, 255, 255, 0.2);
+          }
+          40% {
             -webkit-text-stroke: 1.5px transparent;
-            text-shadow: none;
-          }
-          75% {
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
             text-shadow: 
-              0 0 1px rgba(255, 255, 255, 0.4),
-              0 0 2px rgba(255, 255, 255, 0.4),
-              0 0 3px rgba(255, 255, 255, 0.4);
+              0 0 5px rgba(255, 255, 255, 0.3),
+              0 0 10px rgba(255, 255, 255, 0.2),
+              0 0 15px rgba(255, 255, 255, 0.1);
+          }
+          60% {
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.8);
+            text-shadow: 
+              0 0 5px rgba(255, 255, 255, 0.8),
+              0 0 10px rgba(255, 255, 255, 0.6),
+              0 0 15px rgba(255, 255, 255, 0.4),
+              0 0 20px rgba(255, 255, 255, 0.2);
+          }
+          80% {
+            -webkit-text-stroke: 1.5px transparent;
+            text-shadow: 
+              0 0 5px rgba(255, 255, 255, 0.3),
+              0 0 10px rgba(255, 255, 255, 0.2),
+              0 0 15px rgba(255, 255, 255, 0.1);
           }
           100% {
             -webkit-text-stroke: 1.5px transparent;
-            text-shadow: none;
+            text-shadow: 
+              0 0 5px rgba(255, 255, 255, 0.3),
+              0 0 10px rgba(255, 255, 255, 0.2),
+              0 0 15px rgba(255, 255, 255, 0.1);
           }
         }
       `}</style>

@@ -1,41 +1,41 @@
 import { motion, useAnimation, PanInfo } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import AnimatedHeading from './AnimatedHeading';
 
 const projects = [
   {
     title: "Sign Language Translator Glove",
-    description: "Developed and trained an IMU acquiring random forest machine learning model, achieving an accuracy of 97%. Curated and trained a custom dataset tailored specifically for the model. Integrated Bluetooth technology for seamless wireless communication between the glove (hardware-side) and mobile (software) components. Delivered real-time, accurate translations for sign language gestures, enhancing usability. Designed and implemented a user-friendly mobile application to provide an intuitive and accessible experience.",
-    image: "/project1.jpg",
+    description: "Developed and trained an IMU acquiring random forest machine learning model, achieving an accuracy of 97%. Integrated Bluetooth technology for seamless wireless communication between the glove and mobile.",
+    image: "/images/SignGlove.jpg",
     skills: ['Machine Learning', 'Python', 'Bluetooth', 'Mobile Development', 'Random Forest', 'IMU Sensors'],
     githubLink: "https://github.com/hba777/sign_glove_application"
   },
   {
     title: "Spotify Clone App",
     description: "Independently replicated a research project on predicting music streams on Spotify. Implemented various analysis techniques to understand the relationships between different song attributes. Utilized an SQL database as the backend to manage song data.",
-    image: "/project2.jpg",
+    image: "/images/Spotify.png",
     skills: ['SQL', 'Data Analysis', 'Python', 'Machine Learning', 'Data Visualization', 'Flutter', 'Node.js'],
     githubLink: "https://github.com/hba777/ScuffedSpotify"
   },
   {
     title: "Real-Time Chat Application",
     description: "Developed a real-time chat application in Flutter. Used Firebase for user authentication and data storage. Implemented a push-notification system using Firebase Cloud Messaging.",
-    image: "/project3.jpg",
+    image: "/images/ChatApp.jpg",
     skills: ['Flutter', 'Firebase', 'Firebase Cloud Messaging'],
     githubLink: "https://github.com/hba777/FlutterNikoChatApp"
   },
   {
     title: "Real Estate Website",
     description: "Built a responsive real estate website using Next.js for a seamless user experience. Utilized PostgreSQL for database management and Firebase for user authentication and bookmark storage. Integrated interactive property maps using Leaflet.js for enhanced property visualization and location discovery.",
-    image: "/project4.jpg",
+    image: "/images/RealEstate.png",
     skills: ['Next.js', 'PostgreSQL', 'Firebase', 'Leaflet.js', 'JavaScript', 'Responsive Design'],
     githubLink: "https://github.com/hba777/Real-Estate-Website"
   },
   {
     title: "Amadeus",
     description: "Implemented seamless integration with the Gemini API to generate dynamic, AI-driven text and image responses based on user inputs. Allowed users to engage in conversations that included both textual and visual content, ensuring user-friendliness.",
-    image: "/project5.jpg",
+    image: "/images/Amadeus.png",
     skills: ['Gemini API', 'Natural Language Processing', 'Flutter'],
     githubLink: "https://github.com/hba777/Amadeus"
   }
@@ -45,6 +45,17 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const controls = useAnimation();
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleSetProjectIndex = (event: CustomEvent<{ index: number }>) => {
+      setCurrentIndex(event.detail.index);
+    };
+
+    window.addEventListener('setProjectIndex', handleSetProjectIndex as EventListener);
+    return () => {
+      window.removeEventListener('setProjectIndex', handleSetProjectIndex as EventListener);
+    };
+  }, []);
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const threshold = 50;
