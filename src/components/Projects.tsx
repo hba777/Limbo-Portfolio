@@ -120,7 +120,7 @@ export default function Projects() {
             <motion.button
               key={index}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-white' : 'bg-gray-500'
+                index === currentIndex ? 'bg-gray-200' : 'bg-gray-700'
               }`}
               onClick={() => setCurrentIndex(index)}
               whileHover={{ scale: 1.2 }}

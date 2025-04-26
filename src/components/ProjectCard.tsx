@@ -48,7 +48,7 @@ export default function ProjectCard({ title, description, image }: ProjectCardPr
     >
       <div className="relative w-full h-full">
         <motion.div
-          className="absolute inset-0 backface-hidden bg-gray-800 p-8 rounded-2xl shadow-lg"
+          className="absolute inset-0 backface-hidden bg-gray-900/30 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300"
           initial={{ rotateY: 0 }}
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -56,10 +56,10 @@ export default function ProjectCard({ title, description, image }: ProjectCardPr
         >
           <div className="w-full h-full">
             <img src={image} alt={title} className="w-full h-1/2 object-cover rounded-lg mb-6" />
-            <h3 className="text-3xl font-bold mb-4">{title}</h3>
+            <h3 className="text-3xl font-bold mb-4 text-gray-100">{title}</h3>
             <button 
               onClick={() => setFlipped(!flipped)}
-              className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-gray-200"
             >
               Click to flip
             </button>
@@ -67,18 +67,18 @@ export default function ProjectCard({ title, description, image }: ProjectCardPr
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 backface-hidden bg-black p-8 rounded-2xl shadow-lg"
+          className="absolute inset-0 backface-hidden bg-gray-900/30 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300"
           initial={{ rotateY: 180 }}
           animate={{ rotateY: flipped ? 0 : 180 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           style={{ transformStyle: "preserve-3d" }}
         >
           <div className="w-full h-full">
-            <h3 className="text-3xl font-bold mb-4">{title}</h3>
-            <p className="text-lg text-gray-300 mb-6">{description}</p>
+            <h3 className="text-3xl font-bold mb-4 text-gray-100">{title}</h3>
+            <p className="text-lg text-gray-400 mb-6">{description}</p>
             <button 
               onClick={() => setFlipped(!flipped)}
-              className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-gray-200"
             >
               Click to flip back
             </button>
