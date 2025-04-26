@@ -97,7 +97,7 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="text-lg md:text-xl font-orbitron tracking-widest text-white"
           >
-            Haris's Portfolio
+            Haris&apos;s Portfolio
           </motion.h1>
         </Link>
 

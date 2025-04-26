@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useRef, } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useGLTF, Environment, Float, Segments, Line } from '@react-three/drei';
+import { Float, } from '@react-three/drei';
 import * as THREE from 'three';
 
 export default function Mask3D() {
