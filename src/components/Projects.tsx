@@ -82,10 +82,10 @@ export default function Projects() {
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         />
         
-        <div className="relative flex items-center justify-center h-[1000px]">
+        <div className="relative flex items-center justify-center h-[600px] md:h-[1000px]">
           <motion.div
             ref={containerRef}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center w-full"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
@@ -105,7 +105,7 @@ export default function Projects() {
                   x: `${(index - currentIndex) * 200}%`,
                 }}
               >
-                <div className="w-[1000px] h-[800px]">
+                <div className="w-[300px] md:w-[1000px] h-[500px] md:h-[800px]">
                   <ProjectCard {...project} />
                 </div>
               </motion.div>
