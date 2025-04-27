@@ -1,6 +1,5 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import AnimatedHeading from '../components/AnimatedHeading';
 import Mask3D from '../components/Mask3D';
 import { motion } from 'framer-motion';
 import AnimatedAboutMe from '@/components/AnimatedAboutMe';
