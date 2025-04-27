@@ -1,62 +1,95 @@
-import { motion } from 'framer-motion';
+import { PropsWithChildren, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 interface AnimatedHeadingProps {
   text: string;
   className?: string;
 }
 
-const headingVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 50
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-      duration: 0.5
-    }
-  }
-};
-
-const letterVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 50,
-    rotateX: -90
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100
-    }
-  }
-};
-
 export default function AnimatedHeading({ text, className = "" }: AnimatedHeadingProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const initAnimation = async () => {
+      const ScrollTrigger = (await import('gsap/ScrollTrigger')).default;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const ctx = gsap.context(() => {
+        // Initial animation that plays on page load
+        gsap.fromTo(".animated-word", 
+          {
+            opacity: 0,
+            y: 50,
+            rotateX: 90,
+            rotateY: 90,
+            transformOrigin: "center center",
+            perspective: 1000,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.1,
+          }
+        );
+
+        // Scroll-triggered animation
+        const titleAnimation = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "100 bottom",
+            end: "center bottom",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        titleAnimation.fromTo(".animated-word", 
+          {
+            opacity: 0,
+            y: 50,
+            rotateX: 90,
+            rotateY: 90,
+            transformOrigin: "center center",
+            perspective: 1000,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.1,
+          }
+        );
+      }, containerRef);
+
+      return () => ctx.revert();
+    };
+
+    initAnimation();
+  }, []);
+
   return (
-    <motion.div
-      variants={headingVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
-      className={className}
-    >
-      {text.split("").map((letter, index) => (
-        <motion.span
-          key={index}
-          variants={letterVariants}
-          className="inline-block"
+    <div ref={containerRef} className={cn("animated-title perspective-1000", className)}>
+      {text.split("<br />").map((line) => (
+        <h1
+          key={line}
+          className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
         >
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
+          {line.split(" ").map((word) => (
+            <span
+              key={`${line}-${word}`}
+              className="animated-word inline-block"
+              dangerouslySetInnerHTML={{ __html: word }}
+            />
+          ))}
+        </h1>
       ))}
-    </motion.div>
+    </div>
   );
 } 

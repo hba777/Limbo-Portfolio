@@ -3,6 +3,7 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import AnimatedHeading from '../components/AnimatedHeading';
 import Mask3D from '../components/Mask3D';
 import { motion } from 'framer-motion';
+import AnimatedAboutMe from '@/components/AnimatedAboutMe';
 
 export default function About() {
   const headingVariants = {
@@ -84,9 +85,9 @@ export default function About() {
               viewport={{ once: true }}
               variants={headingVariants}
             >
-              <AnimatedHeading 
+              <AnimatedAboutMe 
                 text="About Me" 
-                className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" 
+                className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text" 
               />
             </motion.div>
 
