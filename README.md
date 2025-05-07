@@ -1,40 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-## Getting Started
+## 🌐 Live Demo
 
-First, run the development server:
+🔗 [Check out the website](https://portfolio-website-lyart-sigma-64.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🖼️ Screenshots
+# Introduction
+<img src="https://github.com/user-attachments/assets/0429e40a-3d09-407f-a158-3046c803d282" alt="Home Page" width="100%" height="auto" />
+<br/><br/>
+# Projects
+<img src="https://github.com/user-attachments/assets/3aa3d411-da43-4dfd-a11d-a63c1d4e57b8" alt="Projects Section" width="100%" height="auto" />
+<br/><br/>
+# Skills
+<img src="https://github.com/user-attachments/assets/b646fe1a-7ddc-4fee-a573-fd63ddd8b762" alt="Contact Section" width="100%" height="auto" />
+<br/><br/>
+# About
+<img src="https://github.com/user-attachments/assets/edcf3c47-0e6e-4d31-bfd7-4dc4e419f454" alt="Contact Section" width="100%" height="auto" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Built With
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Next.js** – React framework for SSR & static site generation
+- **TypeScript** – Strongly typed language for scalable code
+- **Three.js** – For 3D animations and interactive visuals
+- **Tailwind CSS** – Utility-first CSS for styling
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🚀 Setup Instructions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
 
-## Learn More
+2. Install dependencies:
+   npm i
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+3. Run local server:
+   npm run dev
