@@ -17,7 +17,7 @@ export default function Hero() {
             delay: 0.3,
             ease: "easeOut"
           }}
-          className="text-6xl md:text-8xl font-bold relative"
+          className="text-6xl md:text-7xl font-bold relative"
         >
           <motion.span 
             className="neon-text"
@@ -29,7 +29,7 @@ export default function Hero() {
               ease: "easeOut"
             }}
           >
-            Full Stack Developer  
+            React & Next.js Developer  
           </motion.span>
         </motion.h1>
       </div>
