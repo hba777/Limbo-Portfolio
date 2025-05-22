@@ -136,7 +136,7 @@ export default function ProjectCard({ title, description, image, skills, githubL
                 </div>
               </div>
               <div className="flex-1 flex items-start justify-center">
-                <div className="w-full md:w-[400px] h-[300px] md:h-[550px] flex items-center justify-center">
+                <div className="w-full md:w-[480px] h-[300px] md:h-[550px] flex items-center justify-center">
                   <img 
                     src={image} 
                     alt={title} 
