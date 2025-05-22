@@ -153,7 +153,7 @@ export default function About() {
           </div>
 
           {/* Right side - 3D Mask */}
-          <div className="h-[600px] w-full relative">
+          <div className="h-[600px] w-full relative cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-3xl blur-3xl -z-10" />
             <Canvas shadows className="rounded-3xl">
               <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={75} />
